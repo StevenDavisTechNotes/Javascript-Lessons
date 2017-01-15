@@ -1,0 +1,6 @@
+V:\IPG\Users\SDavis\Trainings\Javascript Training\Javascript-3 Async Programming Chains and Promises\Require.js\Declaration Style\PhotoBrowser-RequireJS\bin\PhotoBrowser-RequireJS.dll.config
+V:\IPG\Users\SDavis\Trainings\Javascript Training\Javascript-3 Async Programming Chains and Promises\Require.js\Declaration Style\PhotoBrowser-RequireJS\bin\PhotoBrowser-RequireJS.dll
+V:\IPG\Users\SDavis\Trainings\Javascript Training\Javascript-3 Async Programming Chains and Promises\Require.js\Declaration Style\PhotoBrowser-RequireJS\bin\PhotoBrowser-RequireJS.pdb
+V:\IPG\Users\SDavis\Trainings\Javascript Training\Javascript-3 Async Programming Chains and Promises\Require.js\Declaration Style\PhotoBrowser-RequireJS\obj\Debug\PhotoBrowser-RequireJS.csprojResolveAssemblyReference.cache
+V:\IPG\Users\SDavis\Trainings\Javascript Training\Javascript-3 Async Programming Chains and Promises\Require.js\Declaration Style\PhotoBrowser-RequireJS\obj\Debug\PhotoBrowser-RequireJS.dll
+V:\IPG\Users\SDavis\Trainings\Javascript Training\Javascript-3 Async Programming Chains and Promises\Require.js\Declaration Style\PhotoBrowser-RequireJS\obj\Debug\PhotoBrowser-RequireJS.pdb

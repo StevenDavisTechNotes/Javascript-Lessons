@@ -1,0 +1,38 @@
+<html><head><title></title>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+    String.prototype.format = String.prototype.f = function() {
+        var s = this,
+            i = arguments.length;
+
+        while (i--) {
+            s = s.replace(new RegExp('\\{' + i + '\\}', 'gm'), arguments[i]);
+        }
+        return s;
+    };
+</script>
+</head>
+<body>
+<div>
+    <h2>Log of What Happened</h2>
+    <ul id="myEventList" />
+    <button onclick="startCountDown()">Start Countdown</button>
+</div>
+<script src="Timers and DOM Events.js"></script>
+<script>
+
+    // function startCountDown() {
+    //     var numberOfElapsedTicks = 0;
+    //     var intervalHandle = setInterval(function() {
+    //         numberOfElapsedTicks++;
+    //         var msg = "Ticked # {0} at {1}".format(numberOfElapsedTicks, Date());
+    //         $('<li>', { text: msg }).appendTo($('#myEventList'));
+    //         if(numberOfElapsedTicks>=10) {
+    //             clearInterval(intervalHandle);
+    //             console.log("Done Ticking");
+    //         }
+    //     }, 1000);
+    // }
+
+</script>
+<body>

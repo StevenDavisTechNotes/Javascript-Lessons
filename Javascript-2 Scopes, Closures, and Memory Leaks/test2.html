@@ -1,0 +1,52 @@
+<html><head><title></title></head>
+<body>
+    <ul id="results"></ul>
+
+
+<script>
+function assert(value, desc) {
+    var li = document.createElement("li");
+    li.className = value ? "pass" : "fail";
+    li.appendChild(document.createTextNode(desc));
+    document.getElementById("results").appendChild(li);
+}
+
+var outerValue = true;
+
+function outerFn(arg1) {
+    var innerValue = true;
+    assert(typeof otherValue === "undefined", "Variables defined late are not in the closure.");
+
+    function innerFn(arg2) {
+    var innerInnerValue = true;
+        assert(outerFn && outerValue, "These still come from the closure.");
+        assert(innerFn && innerValue && arg1, "All from a closure, as well.");
+    }
+    innerFn(true);
+}
+
+function outerFn2(arg1) {
+    var innerValue = true;
+    assert(typeof otherValue === "undefined", "Variables defined late are not in the closure.");
+
+    function innerFn2(arg2) {
+        assert(outerFn && outerValue, "These still come from the closure.");
+        assert(innerFn2 && innerValue && arg1, "All from a closure, as well.");
+    }
+    innerFn2(true);
+}
+
+outerFn(true);
+outerFn2(false);
+var otherValue = true;
+assert(outerFn && outerValue, "Globally-accessible variables and functions.");
+
+function eirtf(arg1) {
+    this = {};
+    innerValue = true;    
+}
+eirtf();
+
+</script>
+</body>
+</html>

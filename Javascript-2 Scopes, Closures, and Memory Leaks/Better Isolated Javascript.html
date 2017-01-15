@@ -1,0 +1,62 @@
+<html><head><title></title>
+<style>
+    .pass { background: green}
+    .fail { background: red}
+</style>
+</head>
+<body>
+    <ul id="results"></ul>
+
+
+<script>
+function assert(value, desc) {
+    var li = document.createElement("li");
+    li.className = value ? "pass" : "fail";
+    li.appendChild(document.createTextNode(desc));
+    document.getElementById("results").appendChild(li);
+}
+
+
+(function() {
+var outerValue = true;
+
+function outerFn(arg1) {
+    var innerValue = true;
+    assert(typeof otherValue === "undefined", "Variables defined late are not in the closure.");
+
+    function innerFn(arg2) {
+        assert(outerFn && outerValue, "These still come from the closure.");
+        assert(innerFn && innerValue && arg1, "All from a closure, as well.");
+    }
+    innerFn(true);
+}
+
+outerFn(true);
+var otherValue = true;
+assert(outerFn && outerValue, "Globally-accessible variables and functions.");
+})();
+
+
+(function() {
+    var myVar = 3;
+    for(var i=0;i<4;i++) {
+        var myVar = 100+i;
+    }
+    console.log("myVar = ", myVar)
+})();
+
+
+(function() {
+    var myVar = 3;
+    for(var i=0;i<4;i++) {
+(function() {
+        var myVar = 100+i;
+})();
+    }
+    console.log("myVar = ", myVar)
+})();
+
+
+</script>
+</body>
+</html>

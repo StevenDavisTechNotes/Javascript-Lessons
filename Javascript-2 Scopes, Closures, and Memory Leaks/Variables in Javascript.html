@@ -1,0 +1,59 @@
+<html><head><title></title>
+<style>
+    .pass { background: green}
+    .fail { background: red}
+</style>
+</head>
+<body>
+    <ul id="results"></ul>
+
+<a href="https://dorey.github.io/JavaScript-Equality-Table/" target="_blank">EqualityTable</a>
+<script>
+function assert(value, desc) {
+    var li = document.createElement("li");
+    li.className = value ? "pass" : "fail";
+    li.appendChild(document.createTextNode(desc));
+    document.getElementById("results").appendChild(li);
+}
+
+var value1;
+
+
+value1 = "0.0"; assert(value1 == 0, '0.0 equals 0');
+value1 = "0.0"; assert(value1 !== 0, '0.0 is not same type as 0');
+value1 = []; assert(value1 !== false, '[] equals false');
+value1 = "a"; assert(value1 != "b", 'a does not equal b');
+value1 = "a"; assert(value1 != null, 'a does not equals null');
+
+value1 = true; assert(value1, 'Can declare and set a variable');
+value1 = null; assert(value1 === null, 'Can set a variable to the null value');
+value1 = undefined; assert(value1 === undefined, 'Can set a variable to have an undefined value');
+assert(value1 != null, 'Undefined not equals null');
+assert(value1 == null, 'Undefined equals null');
+assert(value1 !== null, 'Undefined is not null');
+assert(value1 === null, 'Undefined is null');
+assert(value1 === undefined, 'Undefined is undefined');
+assert(typeof value1 === "undefined" || value1 === null, 'Proper is undefined or null')
+assert(!undefined, 'Undefined is falsey');
+assert(!null, 'Null is falsey');
+
+var complexVariable = {
+    field: 'value',
+    items: [
+        { itemId: 1},
+        { itemId: 2},
+    ],
+    properties: {
+        nestedProperty: 3
+    }
+}
+
+complexVariable.properties.nestedProperty = 4;
+complexVariable['properties']['nestedProperty'] = 4;
+complexVariable.properties.nestedProperty2 = 3;
+delete(complexVariable.properties.nestedProperty2);
+console.log(complexVariable.properties.nestedProperty2);
+
+</script>
+</body>
+</html>

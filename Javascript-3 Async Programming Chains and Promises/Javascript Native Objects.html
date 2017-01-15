@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title></title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.js"></script>
+</head>
+<body>    
+    <script>
+
+(function(){
+
+    // Undefined as an element of a list causes a compile error
+    var array = ['', 0, null, Infinity, NaN, [], [[]], false, function() {}, new Date(), new Map(), new ArrayBuffer(0)];
+    array.forEach(function(field){
+        try {
+            console.log(field, typeof field);
+        } catch(err2) {
+            console.log("field value of ",field, "threw exception");
+        }
+    });
+
+    var obj = {field:1.1};
+    console.log("fields of {field:1.1}) are ", Object.getOwnPropertyNames(obj));
+})();
+
+    </script>
+</body>
+</html>

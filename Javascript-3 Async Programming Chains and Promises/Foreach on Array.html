@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title></title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.js"></script>
+</head>
+<body>
+    <div style="display: table; border: solid 1px black">
+        <div style="display: table-row">
+            <div style="display: table-cell; border: solid 1px black">
+                <h2>Array for in</h2>
+                <ul id="arrayForIn" />
+            </div>
+            <div style="display: table-cell; border: solid 1px black">
+                <h2>Array getOwnPropertyNames</h2>
+                <ul id="arrayGetOwnPropertyNames" />
+            </div>
+            <div style="display: table-cell; border: solid 1px black">
+                <h2>Array lodash.keysIn</h2>
+                <ul id="arrayLodash" />
+            </div>
+        </div>
+        <div style="display: table-row">
+            <div style="display: table-cell; border: solid 1px black">
+                <h2>Object for in</h2>
+                <ul id="objectForIn" />
+            </div>
+            <div style="display: table-cell; border: solid 1px black">
+                <h2>Object hasOwnProperty</h2>
+                <ul id="objectGetOwnPropertyNames" />
+            </div>
+            <div style="display: table-cell; border: solid 1px black">
+                <h2>Object lodash.keysIn</h2>
+                <ul id="objectLodash" />
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var array = ['John', 'Paul', 'George', 'Ringo'];
+        for (var field in array) {
+            $('<li>', { text: field }).appendTo($('#arrayForIn'));
+        }
+
+        for (var field in Object.getOwnPropertyNames(array)) {
+            $('<li>', { text: field }).appendTo($('#arrayGetOwnPropertyNames'));
+        }
+        for (var field in _.keys(array)) {
+            $('<li>', { text: field }).appendTo($('#arrayLodash'));
+        }
+        console.log("Object.getOwnPropertyNames(array)=", Object.getOwnPropertyNames(array));
+        console.log("Object.getOwnPropertySymbols(array)", Object.getOwnPropertySymbols(array));
+        console.log("Object.keys(array)", Object.keys(array));
+
+        var other = {
+            singer: 'Tony Sheridan', bassist: 'Stuart Sutcliffe', guitarist: 'Eric Clapton',
+            drummers: ['Pete Best',
+                'Andy White', 'Tommy Moore', 'Jimmy Nicol'], 'harmonica and percussion': 'Neil Aspinall',
+            'Hammond organ player': 'Mal Evans', 'electric piano player': 'Nicky Hopkins',
+            pianist: 'Billy Preston'
+        };
+        for (var field in other) {
+            $('<li>', { text: field }).appendTo($('#objectForIn'));
+        }
+        Object.getOwnPropertyNames(other).forEach(function (field) {
+            $('<li>', { text: field }).appendTo($('#objectGetOwnPropertyNames'));
+        });
+        _.each(_.keys(other),function (field) {
+            $('<li>', { text: field }).appendTo($('#objectLodash'));
+        });
+        console.log("Object.getOwnPropertyNames(other)=", Object.getOwnPropertyNames(other));
+        console.log("Object.getOwnPropertySymbols(other)", Object.getOwnPropertySymbols(other));
+        console.log("Object.keys(other)", Object.keys(array));
+    </script>
+</body>
+</html>
