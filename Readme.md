@@ -1,10 +1,10 @@
 # Javascript Interactive Training
 
 ## Goal
-Provide some exposure to JavaScript using Visual Studio as a precursor to the Microsoft ASP.net MVC / Angular training.
+Provide some exposure to JavaScript.
 
 ## Format 
-Bring your thinking caps.  I teaching by mob programming more than lecturing.  This format is in-between.  Expect to help me solve programming challenges.  I will be at the keyboard and layout the material, but you need to find the solutions.
+Bring your thinking caps.  I will be at the keyboard and layout the material, but you need to find the solutions.
 
 ## Session Plan
 1.	Making a first Web UI, Web API, and Web API Testing
@@ -13,10 +13,6 @@ Bring your thinking caps.  I teaching by mob programming more than lecturing.  T
 4.	Javascript Classes and Inheritance
 5.	DOM and jQuery Programming
 6.	Higher Level WebDev Frameworks
-
-## Lesson plans
-V:\IPG\Users\SDavis\Trainings\Javascript Training
-(Not the final location.)
 
 ## Expectations 
 * Bring your thinking caps.  
